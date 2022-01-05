@@ -1,0 +1,23 @@
+<div class="background-profile">
+    <div class="container" >
+        <div class="row d-flex justify-content-center" style="padding-top:40px; ">
+            <div class="col-md-7">
+                <div class="card p-5 py-16">
+                    <div class="text-center"> <img src="{{userInfo.imageUrl}}" class="img-thumbnail" alt="profile-photo" width="304" height="236" > </div>
+                    <p class="p-perfil"> Nombre de usuario: </p><p>{{userInfo.username}}</p>
+                    <p class="p-perfil">¿Quién eres?:</p><p>{{userInfo.description}}</p>
+                    <p class="p-perfil">¿De dónde vienes?</p> <p> {{user.from}}</p>
+                    <p class="p-perfil">Viajes organizados:</p>
+                    <ul>
+                            {{#each allPlaces}}
+                            <li class="btn bg-success">{{destination}}</li>
+                            {{/each}}
+                    </ul><br>
+                    
+                    <a class="btn btn-outline-dark me-2" href="/profile/{{userInfo.id}}">Edita tu perfil </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

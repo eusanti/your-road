@@ -1,0 +1,24 @@
+<div class="container">
+<h1>Recuerdo de: {{name}} </h1>
+    <div class="row">
+        <div class="col-8">
+             <form action="/point/details/edit/{{id}}" method="POST" enctype="multipart/form-data">
+                <label>Comentarios:</label><br><br>
+                <textarea name="comments" rows="4" cols="75">{{comments}}</textarea><br><br>
+                <label>Tips:</label><br><br>
+                    <input size="75" type="text" name="tips" value="{{tips}}"><br><br>
+                <label for="start">Fecha prevista:</label> <br><br>
+                <input type="date" id="start" name="date" value="2022-01-01" min="2021-01-01" max="2050-12-31"><br><br>
+                <input type="file" name="imageUrl" /><br><br>
+                <button class="btn btn-outline-dark me-2" type="submit" name="guardar">Guardar</button>
+         
+              </form>
+         </div>
+
+    <div class="col-4">
+        <img class="image-point" src={{imageUrl}}><br>
+    </div>
+    
+    </div>
+    
+</div>

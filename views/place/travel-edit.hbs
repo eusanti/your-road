@@ -1,0 +1,35 @@
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="list-group col-6 ">
+            <h1 class="titulo">Planifica tu viaje a {{{thePlace.destination}}}</h1>
+            <form action="/place/marker/edit/{{thePlace.id}}" method="POST">
+                <p>Paradas:</p>
+                <input id="searchInput" class="controls" type="text" name="pointsInt" placeholder="Primera parada"><br><br>
+                <input class="btn btn-outline-dark me-2" type="submit" value="Añadir"><br><br>
+            </form>
+        </div>
+        <h2>Sitios a visitar:</h2>
+        
+        <ul>
+            {{#each thePoints}}
+            <li><a href="/point/details/edit/{{id}}">{{name}}
+            <a href="/point/details/delete/{{id}}"><img src="/images/58326.png" width="20px"> </a></li>
+            {{/each}}
+        </ul>
+      
+{{!-- ///////////Entrada de búsqueda  --}}
+ 
+
+        {{!-- <! - Mapa de Google -> --}}
+            <div id="map" class="{{thePlace.destination}}" data-points="{{#each thePoints}}{{name}}/{{/each}}"> </div>
+
+            {{!-- <! - Mostrar datos de geolocalización -> --}}
+           
+<a href="/place/collections">Back</a>
+    </div>
+
+</div>
+
